@@ -31,6 +31,11 @@ public class TouchRipple : MonoBehaviour {
 
 		} else {
 
+			if ( ! currentSystem.particleSystem.IsAlive() ) {
+
+				currentSystem.particleSystem.Play();
+
+			}
 			currentSystem.transform.position = Vector3.Lerp( currentSystem.transform.position, worldPoint, Mathf.Clamp01( 10 *  0.8f * Time.deltaTime ) );
 
 		}

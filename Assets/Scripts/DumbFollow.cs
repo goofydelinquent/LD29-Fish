@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DumbFollow : MonoBehaviour {
 
-	private float speed = 20f;
+	private float speed = 15f;
 	private float maxSpeed = 50f;
 	private float squareThreshold = 0.75f;
 	private Vector3 targetPosition;
@@ -51,7 +51,7 @@ public class DumbFollow : MonoBehaviour {
 			Quaternion look = Quaternion.LookRotation( normal );
 			transform.rotation = Quaternion.Lerp( transform.rotation, look, Mathf.Clamp01( 1.2f * Time.fixedDeltaTime ) );
 
-			if ( Vector3.Dot( transform.forward, normal ) > 0.65f ) {
+			if ( Vector3.Dot( transform.forward, normal ) > 0.7f ) {
 				rigidbody.AddForce( normal * speed );
 
 				if ( rigidbody.velocity.magnitude > maxSpeed ) {
