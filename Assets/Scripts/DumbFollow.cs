@@ -17,7 +17,7 @@ public class DumbFollow : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		// if input detected, try to go to world position
+		// if input detected, set new target position
 		if ( Input.GetMouseButton( 0 ) ) {
 
 			Vector3 position = Input.mousePosition;
@@ -38,10 +38,11 @@ public class DumbFollow : MonoBehaviour {
 			rigidbody.velocity = rigidbody.velocity * 0.9f;
 		}
 
-		if ( rigidbody.velocity.sqrMagnitude < 0.1f ) {
+		if ( rigidbody.velocity.sqrMagnitude < 0.05f ) {
 			rigidbody.velocity = Vector3.zero;
 		}
 
+		//Move to target
 		Vector3 diff = ( targetPosition - transform.position );
 		if ( diff.sqrMagnitude > squareThreshold ) {
 
@@ -50,18 +51,14 @@ public class DumbFollow : MonoBehaviour {
 			Quaternion look = Quaternion.LookRotation( normal );
 			transform.rotation = Quaternion.Lerp( transform.rotation, look, Mathf.Clamp01( 1.2f * Time.fixedDeltaTime ) );
 
-
-			if ( Vector3.Dot( this.transform.forward, normal ) > 0.6f ) {
+			if ( Vector3.Dot( transform.forward, normal ) > 0.65f ) {
 				rigidbody.AddForce( normal * speed );
 
 				if ( rigidbody.velocity.magnitude > maxSpeed ) {
 					rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
 				}
 
-			} else {
-				//rigidbody.velocity = rigidbody.velocity * 0.9f;
 			}
-
 		} 
 	}
 }

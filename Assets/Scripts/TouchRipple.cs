@@ -3,8 +3,7 @@ using System.Collections;
 
 public class TouchRipple : MonoBehaviour {
 
-	bool bWasButtonDown = false;
-	public GameObject particleSystem;
+	public GameObject ripplerPrefab;
 	private GameObject currentSystem;
 
 	// Update is called once per frame
@@ -27,7 +26,7 @@ public class TouchRipple : MonoBehaviour {
 
 		if ( currentSystem == null ) {
 
-			currentSystem = Instantiate( particleSystem, worldPoint, Quaternion.identity ) as GameObject;
+			currentSystem = Instantiate( ripplerPrefab, worldPoint, Quaternion.identity ) as GameObject;
 			currentSystem.particleSystem.Emit( 1 );
 
 		} else {
