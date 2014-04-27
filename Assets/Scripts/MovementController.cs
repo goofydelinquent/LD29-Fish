@@ -41,15 +41,11 @@ public class MovementController : MonoBehaviour {
 			
 		}
 
-		/*
+		if ( bIsGrounded && Mathf.Abs( h ) < 0.5f ) {
 
-		// If below threshold, speed to zero
-		if ( Mathf.Abs( h ) < 0.2f && bIsGrounded ) {
+			rigidbody2D.velocity = new Vector2( Mathf.Lerp( rigidbody2D.velocity.x, 0f, 0.5f ), rigidbody2D.velocity.y );
 
-			rigidbody2D.velocity = new Vector2( 0f, rigidbody2D.velocity.y );
-		
 		}
-		*/
 
 		// cap speed on horizontal axis
 		if ( Mathf.Abs( rigidbody2D.velocity.x ) > maxSpeed ) {
