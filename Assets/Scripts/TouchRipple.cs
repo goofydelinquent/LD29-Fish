@@ -4,10 +4,7 @@ using System.Collections;
 public class TouchRipple : MonoBehaviour {
 
 	bool bWasButtonDown = false;
-	bool bDidEmit = false;
-	float particleSystemY = 0.1f;
 	public GameObject particleSystem;
-
 	private GameObject currentSystem;
 
 	// Update is called once per frame
@@ -16,19 +13,22 @@ public class TouchRipple : MonoBehaviour {
 		// If left mouse button is not held down
 		if ( ! Input.GetMouseButton( 0 ) ) {
 
-			currentSystem.particleSystem.Stop();
-			Destroy( currentSystem, 3f );
-			currentSystem = null;
+			if ( currentSystem != null ) {
+				currentSystem.particleSystem.Stop();
+				Destroy( currentSystem, currentSystem.particleSystem.startLifetime );
+				currentSystem = null;
+			}
 			return;
 		}
 
 
 		Vector3 worldPoint = Camera.main.ScreenToWorldPoint( Input.mousePosition );
-		worldPoint.y = particleSystemY;
+		worldPoint.y = transform.position.y;
 
 		if ( currentSystem == null ) {
 
 			currentSystem = Instantiate( particleSystem, worldPoint, Quaternion.identity ) as GameObject;
+			currentSystem.particleSystem.Emit( 1 );
 
 		} else {
 
