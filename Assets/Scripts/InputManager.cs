@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InputManager : MonoBehaviour {
 
-	public CharacterController playerController;
+	public MovementController playerController;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour {
 		if ( Input.GetButtonDown( "right" ) ) {
 			movement.x += 1f;
 		}
+
 
 	}
 }
