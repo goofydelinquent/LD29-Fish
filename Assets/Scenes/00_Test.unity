@@ -102,101 +102,44 @@ Transform:
   - {fileID: 881868584}
   - {fileID: 905630985}
   m_Father: {fileID: 0}
---- !u!1 &582557350
+--- !u!1 &217565400
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 582557356}
-  - 33: {fileID: 582557355}
-  - 65: {fileID: 582557354}
-  - 23: {fileID: 582557353}
-  - 114: {fileID: 582557352}
-  - 54: {fileID: 582557351}
+  - 4: {fileID: 217565402}
+  - 114: {fileID: 217565401}
   m_Layer: 0
-  m_Name: Food
+  m_Name: ' FishManager'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &582557351
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 582557350}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 4
-  m_CollisionDetection: 0
---- !u!114 &582557352
+--- !u!114 &217565401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 582557350}
+  m_GameObject: {fileID: 217565400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e39634d69b591449986484c92d289b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9911d9726e8a22e45aa658fb3b24c397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!23 &582557353
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 582557350}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: c0aa40c46670dbb4eacb3cf391df56bc, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!65 &582557354
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 582557350}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &582557355
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 582557350}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &582557356
+  fishPrefab: {fileID: 100010, guid: 1fb592487158cb640b2bdf81cf9dcabb, type: 2}
+  foodPrefab: {fileID: 100000, guid: 0af7d0da8e23e154bbc770a94705a487, type: 2}
+--- !u!4 &217565402
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 582557350}
-  m_LocalRotation: {x: .461939812, y: .191341728, z: .191341728, w: .844623208}
-  m_LocalPosition: {x: -5.85965586, y: 0, z: -3.85767603}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_GameObject: {fileID: 217565400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &610525123
@@ -635,7 +578,7 @@ Transform:
   m_PrefabInternal: {fileID: 1760060453}
   m_GameObject: {fileID: 929292996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: .5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -868,7 +811,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 432edd91fa861bd4fbaa43e29d246e57, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 432edd91fa861bd4fbaa43e29d246e57, type: 2}
       propertyPath: m_LocalPosition.z
@@ -983,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 913385291}
-  fishPrefab: {fileID: 100010, guid: 1fb592487158cb640b2bdf81cf9dcabb, type: 2}
+  fishManager: {fileID: 217565401}
 --- !u!4 &1873331776
 Transform:
   m_ObjectHideFlags: 0

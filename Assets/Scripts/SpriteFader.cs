@@ -21,8 +21,6 @@ public class SpriteFader : Fader {
 		
 		Color c = new Color( 1f, 1f, 1f, p_alpha );
 		SpriteRenderer[] renderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
-		float average = 0f;
-		float factor = 1f / renderers.Length;
 		for( int i = 0; i < renderers.Length; i++ ) {
 			
 			SpriteRenderer current = renderers[ i ];
