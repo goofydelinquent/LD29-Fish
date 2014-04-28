@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 100010, guid: 1fb592487158cb640b2bdf81cf9dcabb, type: 2}
-  foodPrefab: {fileID: 100000, guid: 0af7d0da8e23e154bbc770a94705a487, type: 2}
 --- !u!4 &217565402
 Transform:
   m_ObjectHideFlags: 0
@@ -384,7 +383,7 @@ GUIText:
   m_GameObject: {fileID: 881868582}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 1
+  m_Text: 0
   m_Anchor: 5
   m_Alignment: 2
   m_PixelOffset: {x: 0, y: 0}
@@ -434,7 +433,7 @@ GUIText:
   m_GameObject: {fileID: 905630983}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 1
+  m_Text: 0
   m_Anchor: 3
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -644,6 +643,45 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1137131354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1137131356}
+  - 114: {fileID: 1137131355}
+  m_Layer: 0
+  m_Name: ' EnemyManager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1137131355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137131354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc49b2da5be4b141b943170534839b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 100000, guid: eddfc9d57316d8f46ac4dee4c5740243, type: 2}
+--- !u!4 &1137131356
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137131354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1385321211
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +692,7 @@ GameObject:
   - 4: {fileID: 1385321213}
   - 82: {fileID: 1385321212}
   m_Layer: 0
-  m_Name: bg
+  m_Name: bgMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,6 +836,45 @@ Transform:
   m_LocalScale: {x: 1, y: 6.99976778, z: 11.6400003}
   m_Children: []
   m_Father: {fileID: 1965430860}
+--- !u!1 &1409042741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1409042743}
+  - 114: {fileID: 1409042742}
+  m_Layer: 0
+  m_Name: ' FoodManager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1409042742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1409042741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d2e65b2dea35e4eb5265b7433158a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodPrefab: {fileID: 100000, guid: 0af7d0da8e23e154bbc770a94705a487, type: 2}
+--- !u!4 &1409042743
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1409042741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.75242901, y: 1.33393288, z: 1.40513039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &1760060453
 Prefab:
   m_ObjectHideFlags: 0
@@ -927,6 +1004,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 913385291}
   fishManager: {fileID: 217565401}
+  foodManager: {fileID: 1409042742}
+  enemyManager: {fileID: 1137131355}
+  scoreText: {fileID: 905630984}
+  highScoreText: {fileID: 881868583}
 --- !u!4 &1873331776
 Transform:
   m_ObjectHideFlags: 0

@@ -8,9 +8,50 @@ public class DumbFollow : MonoBehaviour {
 	private float squareThreshold = 0.75f;
 	private Vector3 targetPosition;
 
+	private float timeLastInterest;
+	private float timeUntilBored;
+	private bool bIsBored = false;
+
 	void Awake () {
 
 		targetPosition = transform.position;
+		ResetBoredTimer();
+
+	}
+
+	void ResetBoredTimer () {
+
+		bIsBored = false;
+		timeUntilBored = Random.Range( 4f, 8f );
+		timeLastInterest = Time.timeSinceLevelLoad;
+
+	}
+
+	void SetRandomTarget () {
+
+		targetPosition = new Vector3 ( 
+				Random.Range( LevelManager.BOUNDS_MIN.x, LevelManager.BOUNDS_MAX.x ),
+				transform.position.y,
+				Random.Range( LevelManager.BOUNDS_MIN.z, LevelManager.BOUNDS_MAX.z )
+			);
+
+	}
+
+	void Update () {
+
+		if ( bIsBored ) {
+
+			SetRandomTarget();
+			ResetBoredTimer();
+			return;
+
+		}
+
+		if ( Time.timeSinceLevelLoad - timeLastInterest > timeUntilBored ) {
+
+			bIsBored = true;
+
+		}
 
 	}
 
@@ -29,6 +70,8 @@ public class DumbFollow : MonoBehaviour {
 
 			//Check target point if within line of sight? Nah, maybe next time. :P
 			targetPosition = worldPoint;
+
+			ResetBoredTimer();
 
 		}
 
