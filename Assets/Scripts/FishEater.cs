@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class FishEater : MonoBehaviour {
 
-	public const float MIN_SPEED = 0.5f;
-	public const float MAX_SPEED = 1.4f;
+	public const float MIN_SPEED = 0.5f; //0.5f;
+	public const float MAX_SPEED = 1.85f;
 
 	private EnemyManager em;
 	private FishManager fm;
